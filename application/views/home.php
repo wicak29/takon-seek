@@ -33,13 +33,7 @@
             <div class="row">
                 <div class="col-sm-12 overflow">
                    <div class="social-icons pull-right">
-                        <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
+                        <a href="">www.takon-seek.com</a>
                     </div> 
                 </div>
              </div>
@@ -54,7 +48,7 @@
                     <div class="action">
                         <div class="col-sm-12">
                             <h1 class="title">TAKON SEEK</h1>
-                            <p>Ask before you get lost</p>
+                            <p>Ask First Before You Get Lost</p>
                         </div>                                                                                
                     </div>
                 </div>
@@ -63,7 +57,7 @@
     </section>
     <!--/#page-breadcrumb-->
 
-    <section id="blog-details" class="padding-top">
+    <section id="blog-details" class="">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-7">
@@ -75,12 +69,14 @@
                                         <div class="row">
                                             <div class="col-sm-2">
                                                 <label></label>
-                                                <img src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/1.png" alt="">
+                                                <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/5.png" alt="" style="border-left: 0px;">
                                             </div>
                                             <div class="col-sm-10">
                                                 <h3>Melody Nuramdhani</h3>
                                                 <iframe width="560" height="315" src="https://www.youtube.com/embed/YeINWQDg7zg" frameborder="0" allowfullscreen></iframe>
-                                                <p>Surabaya yang ga panas dimana ya?</p>
+                                                <p>I have a PHP form that allows image uploads and checks exif_imagetype(); to make sure an image is valid.
+                                                <br>However, I want all formats, PNG, JPG, JPEG, and GIF, to end up being PNG once submitted.
+                                                <br>How can I go about doing this?</p>
                                                 <!-- <span>Website:<a href="www.jooomshaper.com"> www.jooomshaper.com</a></span> -->
                                             </div>
                                         </div>
@@ -91,31 +87,53 @@
                                         <li class="media">
                                             <div class="post-comment">
                                                 <a class="pull-left" href="#">
-                                                    <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/2.png" alt="">
+                                                    <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/5.png" alt="" style="border-left: 0px;">
                                                 </a>
-                                                <div class="media-body">
-                                                    <span><i class="fa fa-user"></i>Posted by <a href="#">Endure</a></span>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                                                <div class="media-body" style="padding-bottom: 30px;">
+                                                    <span><i class="fa fa-user"></i>Posted by <a href="#">Daniel</a></span> <span class="label label-success">On</span>
+                                                    <p>You just need imagepng() then. In fact it almost becomes a one-liner:
+                                                        <br><code>imagepng(imagecreatefromstring(file_get_contents($filename)), "output.png");</code>
+                                                        <br>You would use <code>$_FILES["id"]["tmp_name"]</code> for the filename, and a different output filename obviously. But the image format probing itself would become redundant.</p>
                                                     <ul class="nav navbar-nav post-nav">
                                                         <li><a href="#"><i class="fa fa-clock-o"></i>February 11,2014</a></li>
-                                                        <li><a href="#"><i class="fa fa-reply"></i>Reply</a></li>
                                                     </ul>
+                                                    <br>
+                                                    <br>
+                                                    <a href=""><button class="btn btn-default btn-xs">Ask for Video Chat</button></a>
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="media">
                                             <div class="post-comment">
                                                 <a class="pull-left" href="#">
-                                                    <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/4.png" alt="">
+                                                    <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/6.png" alt="" style="border-left: 0px;">
                                                 </a>
                                                 <div class="media-body">
-                                                    <span><i class="fa fa-user"></i>Posted by <a href="#">Endure</a></span>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                                                    <span><i class="fa fa-user"></i>Posted by <a href="#">Setiyo</a></span> <span class="label label-danger">Off</span>
+                                                    <p>Based on what kind of image it is you could select the correct function to open the file</p>
                                                     <ul class="nav navbar-nav post-nav">
                                                         <li><a href="#"><i class="fa fa-clock-o"></i>February 11,2014</a></li>
-                                                        <li><a href="#"><i class="fa fa-reply"></i>Reply</a></li>
                                                     </ul>
                                                 </div>
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <div class="post-comment">
+                                                <h3>Post your answer</h3>
+                                                <form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
+                                                    <div class="form-group">
+                                                        <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="email" name="email" class="form-control" required="required" placeholder="Email">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your answer"></textarea>
+                                                    </div>                        
+                                                    <div class="form-group">
+                                                        <input type="submit" name="submit" class="btn btn-submit" value="Submit" style="width: auto; ">
+                                                    </div>
+                                                </form>
                                             </div>
                                         </li>
                                         
@@ -199,17 +217,6 @@
         </div>
     </section>
     <!--/#blog-->
-
-    <footer id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center bottom-separator">
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--/#footer-->
-
 
     <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/bootstrap.min.js"></script>
