@@ -8,9 +8,19 @@ class Home extends CI_Controller
 		$this->load->view('home');
 	}
 
+	public function question_detail()
+	{
+		$this->load->view('question_detail');
+	}
+
 	public function chat()
 	{
 		$this->load->view('chat');
+	}
+
+	public function login()
+	{
+		$this->load->view('login');
 	}
 
 }

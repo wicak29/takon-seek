@@ -12,7 +12,6 @@
     <link href="<?php echo base_url('assets/multicolor'); ?>/css/animate.min.css" rel="stylesheet"> 
 	<link href="<?php echo base_url('assets/multicolor'); ?>/css/main.css" rel="stylesheet">
 	<link href="<?php echo base_url('assets/multicolor'); ?>/css/responsive.css" rel="stylesheet">
-    <link href="<?php echo base_url('assets'); ?>/chat.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
 	    <script src="js/html5shiv.js"></script>
@@ -34,13 +33,7 @@
             <div class="row">
                 <div class="col-sm-12 overflow">
                    <div class="social-icons pull-right">
-                        <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
+                        <a href="">www.takon-seek.com</a>
                     </div> 
                 </div>
              </div>
@@ -54,8 +47,8 @@
                 <div class="row">
                     <div class="action">
                         <div class="col-sm-12">
-                            <h1 class="title">Question Name</h1>
-                            <p>Ask before you get lost</p>
+                            <h1 class="title">TAKON SEEK</h1>
+                            <p>Ask First Before You Get Lost</p>
                         </div>                                                                                
                     </div>
                 </div>
@@ -74,96 +67,78 @@
                                 <div class="post-content overflow">
                                     <div class="author-profile padding">
                                         <div class="row">
-                                            <div class="col-sm-8">
-                                                <iframe width="100%" height="600" src="https://www.youtube.com/embed/YeINWQDg7zg" frameborder="0" allowfullscreen></iframe>
-                                                <!-- <span>Website:<a href="www.jooomshaper.com"> www.jooomshaper.com</a></span> -->
+                                            <div class="col-sm-2">
+                                                <label></label>
+                                                <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/5.png" alt="" style="border-left: 0px;">
                                             </div>
-                                            <div class="col-sm-4">
-                                                <div class="panel panel-primary">
-                                                    <div class="panel-heading" id="accordion">
-                                                        <span class="glyphicon glyphicon-comment"></span> Chat
-                                                        <div class="btn-group pull-right">
-                                                            <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                                                <span class="glyphicon glyphicon-chevron-down"></span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                <div class="panel-collapse collapse in" id="collapseOne">
-                                                    <div class="panel-body">
-                                                        <ul class="chat">
-                                                            <li class="left clearfix"><span class="chat-img pull-left">
-                                                                <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
-                                                            </span>
-                                                                <div class="chat-body clearfix">
-                                                                    <div class="header">
-                                                                        <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
-                                                                            <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
-                                                                    </div>
-                                                                    <p>
-                                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                                                        dolor, quis ullamcorper ligula sodales.
-                                                                    </p>
-                                                                </div>
-                                                            </li>
-                                                            <li class="right clearfix"><span class="chat-img pull-right">
-                                                                <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
-                                                            </span>
-                                                                <div class="chat-body clearfix">
-                                                                    <div class="header">
-                                                                        <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
-                                                                        <strong class="pull-right primary-font">Bhaumik Patel</strong>
-                                                                    </div>
-                                                                    <p>
-                                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                                                        dolor, quis ullamcorper ligula sodales.
-                                                                    </p>
-                                                                </div>
-                                                            </li>
-                                                            <li class="left clearfix"><span class="chat-img pull-left">
-                                                                <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
-                                                            </span>
-                                                                <div class="chat-body clearfix">
-                                                                    <div class="header">
-                                                                        <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
-                                                                            <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
-                                                                    </div>
-                                                                    <p>
-                                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                                                        dolor, quis ullamcorper ligula sodales.
-                                                                    </p>
-                                                                </div>
-                                                            </li>
-                                                            <li class="right clearfix"><span class="chat-img pull-right">
-                                                                <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
-                                                            </span>
-                                                                <div class="chat-body clearfix">
-                                                                    <div class="header">
-                                                                        <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>15 mins ago</small>
-                                                                        <strong class="pull-right primary-font">Bhaumik Patel</strong>
-                                                                    </div>
-                                                                    <p>
-                                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                                                        dolor, quis ullamcorper ligula sodales.
-                                                                    </p>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="panel-footer">
-                                                        <div class="input-group">
-                                                            <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
-                                                            <span class="input-group-btn">
-                                                                <button class="btn btn-warning btn-sm" id="btn-chat">
-                                                                    Send</button>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </div>
+                                            <div class="col-sm-10">
+                                                <h3>Melody Nuramdhani</h3>
+                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/YeINWQDg7zg" frameborder="0" allowfullscreen></iframe>
+                                                <p>I have a PHP form that allows image uploads and checks exif_imagetype(); to make sure an image is valid.
+                                                <br>However, I want all formats, PNG, JPG, JPEG, and GIF, to end up being PNG once submitted.
+                                                <br>How can I go about doing this?</p>
+                                                <!-- <span>Website:<a href="www.jooomshaper.com"> www.jooomshaper.com</a></span> -->
                                             </div>
                                         </div>
                                     </div>
-
+                                    <div class="response-area">
+                                    <h2 class="bold">Answers</h2>
+                                    <ul class="media-list">
+                                        <li class="media">
+                                            <div class="post-comment">
+                                                <a class="pull-left" href="#">
+                                                    <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/5.png" alt="" style="border-left: 0px;">
+                                                </a>
+                                                <div class="media-body" style="padding-bottom: 30px;">
+                                                    <span><i class="fa fa-user"></i>Posted by <a href="#">Daniel</a></span> <span class="label label-success">On</span>
+                                                    <p>You just need imagepng() then. In fact it almost becomes a one-liner:
+                                                        <br><code>imagepng(imagecreatefromstring(file_get_contents($filename)), "output.png");</code>
+                                                        <br>You would use <code>$_FILES["id"]["tmp_name"]</code> for the filename, and a different output filename obviously. But the image format probing itself would become redundant.</p>
+                                                    <ul class="nav navbar-nav post-nav">
+                                                        <li><a href="#"><i class="fa fa-clock-o"></i>February 11,2014</a></li>
+                                                    </ul>
+                                                    <br>
+                                                    <br>
+                                                    <a href="<?php echo base_url('home/chat/'); ?>"><button class="btn btn-default btn-xs">Ask for Video Chat</button></a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <div class="post-comment">
+                                                <a class="pull-left" href="#">
+                                                    <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/6.png" alt="" style="border-left: 0px;">
+                                                </a>
+                                                <div class="media-body">
+                                                    <span><i class="fa fa-user"></i>Posted by <a href="#">Setiyo</a></span> <span class="label label-danger">Off</span>
+                                                    <p>Based on what kind of image it is you could select the correct function to open the file</p>
+                                                    <ul class="nav navbar-nav post-nav">
+                                                        <li><a href="#"><i class="fa fa-clock-o"></i>February 11,2014</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <div class="post-comment">
+                                                <h3>Post your answer</h3>
+                                                <form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
+                                                    <div class="form-group">
+                                                        <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="email" name="email" class="form-control" required="required" placeholder="Email">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your answer"></textarea>
+                                                    </div>                        
+                                                    <div class="form-group">
+                                                        <input type="submit" name="submit" class="btn btn-submit" value="Submit" style="width: auto; ">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>                   
+                                </div><!--/Response-area-->
                                 </div>
                             </div>
                         </div>
@@ -242,17 +217,6 @@
         </div>
     </section>
     <!--/#blog-->
-
-    <footer id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center bottom-separator">
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--/#footer-->
-
 
     <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/bootstrap.min.js"></script>
