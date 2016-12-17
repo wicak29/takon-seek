@@ -12,7 +12,7 @@
     <link href="<?php echo base_url('assets/multicolor'); ?>/css/animate.min.css" rel="stylesheet"> 
 	<link href="<?php echo base_url('assets/multicolor'); ?>/css/main.css" rel="stylesheet">
 	<link href="<?php echo base_url('assets/multicolor'); ?>/css/responsive.css" rel="stylesheet">
-    <link href="<?php echo base_url('assets'); ?>/chat.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css'); ?>/chat.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
 	    <script src="js/html5shiv.js"></script>
