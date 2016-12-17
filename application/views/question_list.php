@@ -1,4 +1,5 @@
-`<!DOCTYPE html>
+<?php $kategori=array('', 'Games', 'Technology', 'Networking'); ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -13,10 +14,6 @@
 	<link href="<?php echo base_url('assets/multicolor'); ?>/css/main.css" rel="stylesheet">
 	<link href="<?php echo base_url('assets/multicolor'); ?>/css/responsive.css" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-	    <script src="js/html5shiv.js"></script>
-	    <script src="js/respond.min.js"></script>
-    <![endif]-->       
     <link rel="shortcut icon" href="<?php echo base_url('assets/multicolor'); ?>/images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url('assets/multicolor'); ?>/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url('assets/multicolor'); ?>/images/ico/apple-touch-icon-114-precomposed.png">
@@ -47,8 +44,7 @@
                 <div class="row">
                     <div class="action">
                         <div class="col-sm-12">
-                            <h1 class="title">Create Question</h1>
-                            <p>You can ask anyone about your confusion</p>
+                            <h1 class="title">Questions List</h1>
                         </div>                                                                                
                     </div>
                 </div>
@@ -57,45 +53,42 @@
     </section>
     <!--/#page-breadcrumb-->
 
-    <section id="blog" class="padding-top" style="margin-bottom: 80px; ">
+    <section id="blog" class="padding-top">
         <div class="container">
             <div class="row">
                 <div class="col-md-9 col-sm-7">
-                    <form method="POST" action="<?php echo base_url('home/create_new_question'); ?>" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label>Question Name *</label>
-                            <input type="text" name="q_name" class="form-control" required="required" placeholder="Question Name">
-                        </div>
-                        <div class="form-group">
-                            <label>Question Text *</label>
-                            <textarea name="q_text" class="form-control" required="required" placeholder="Question Text" rows="8"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Category *</label>
-                            <select name="kategori" class="form-control" required="required">
-                                <option value="1">Games</option>
-                                <option value="2">Technology</option>
-                                <option value="3">Networking</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Upload Video</label>
-                            <input id="video_upload" type="file" name="video_upload" class="form-control">
-                        </div>
-                        <hr>
-                        <div class="form-group">
-                            <input type="submit" name="submit" class="btn btn-submit" value="Submit" style="width: auto; ">
-                        </div>
-                    </form>
+                    <div class="row">
+                        <?php 
+                            
+                            foreach ($question_list as $key => $value) {
+                            ?>
+                            <div class="col-sm-12 col-md-12">
+                                <div class="single-blog single-column">
+                                    <div class="post-content overflow">
+                                        <h2 class="post-title bold"><a href="<?php echo base_url('home/question_detail/'.$value['id']); ?>"><?php echo $value['title']; ?></a></h2>
+                                        <h3 class="post-author"><a href="#">Posted by Melody</a></h3>
+                                        <div class="post-bottom overflow">
+                                            <ul class="nav navbar-nav post-nav">
+                                                <li><a href="#"><i class="fa fa-tag"></i><?php echo $kategori[$value['category']]; ?></a></li>
+                                                <!-- <li><a href="#"><i class="fa fa-comments"></i>0 Answer</a></li> -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                            }
+                        ?>
+                    </div>
                  </div>
                 <div class="col-md-3 col-sm-5">
                     <div class="sidebar blog-sidebar">
                         <div class="sidebar-item categories">
                             <h3>Categories</h3>
                             <ul class="nav navbar-stacked">
-                                <li class=""><a href="<?php echo base_url('home/category/1'); ?>">Games</a></li>
-                                <li class=""><a href="<?php echo base_url('home/category/2'); ?>">Technology</a></li>
-                                <li class=""><a href="<?php echo base_url('home/category/3'); ?>">Networking</a></li>
+                                <li class="<?php if($id_kategori==1) echo "active"; ?>"><a href="<?php echo base_url('home/category/1'); ?>">Games</a></li>
+                                <li class="<?php if($id_kategori==2) echo "active"; ?>"><a href="<?php echo base_url('home/category/2'); ?>">Technology</a></li>
+                                <li class="<?php if($id_kategori==3) echo "active"; ?>"><a href="<?php echo base_url('home/category/3'); ?>">Networking</a></li>
                             </ul>
                         </div>
                     </div>

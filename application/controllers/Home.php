@@ -14,9 +14,26 @@ class Home extends CI_Controller
 		$this->load->view('home');
 	}
 
-	public function question_detail()
+	public function category($id)
 	{
-		$this->load->view('question_detail');
+		$data['id_kategori'] = $id;
+		$data['question_list'] = $this->question->getQuestionByCat($id);
+		// print_r($data);
+		// return;
+		$this->load->view('question_list', $data);
+	}
+
+	public function question_detail($id)
+	{
+		$data['question_det'] = $this->question->getQuestionDetail($id);
+		$data['answer_list'] = $this->question->getAnswerById($id);
+		if(isset($data['question_det']['video_id']))
+		{
+			$data['video_detail'] = $this->question->getVideoDetail($data['question_det']['video_id']);
+		}
+		// print_r($data);
+		// return;
+		$this->load->view('question_detail', $data);
 	}
 
 	public function chat()
@@ -32,6 +49,15 @@ class Home extends CI_Controller
 	public function create_question()
 	{
 		$this->load->view('create_question');
+	}
+
+	public function add_answer($id)
+	{
+		$data = $this->input->post();
+		$data['qid'] = $id;
+		$result = $this->question->addAnswer($data);
+		print_r($result);
+		return;
 	}
 
 	public function create_new_question()

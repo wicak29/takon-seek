@@ -72,73 +72,78 @@
                                                 <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/5.png" alt="" style="border-left: 0px;">
                                             </div>
                                             <div class="col-sm-10">
-                                                <h3>Melody Nuramdhani</h3>
-                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/YeINWQDg7zg" frameborder="0" allowfullscreen></iframe>
-                                                <p>I have a PHP form that allows image uploads and checks exif_imagetype(); to make sure an image is valid.
-                                                <br>However, I want all formats, PNG, JPG, JPEG, and GIF, to end up being PNG once submitted.
-                                                <br>How can I go about doing this?</p>
+                                                <h2><?php echo $question_det['title']; ?></h2>
+                                                <?php 
+                                                    if(isset($question_det['video_id']))
+                                                    { ?>
+                                                        <video width="100%" controls>
+                                                            <source src="<?php echo base_url('assets/video/'.$video_detail[0]['nama_video']); ?>" type="video/mp4">
+                                                        </video>
+                                                    <?php }   
+                                                ?>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <p><?php echo $question_det['text']; ?></p>
+                                                    </div>
+                                                </div>
                                                 <!-- <span>Website:<a href="www.jooomshaper.com"> www.jooomshaper.com</a></span> -->
                                             </div>
                                         </div>
                                     </div>
                                     <div class="response-area">
-                                    <h2 class="bold">Answers</h2>
-                                    <ul class="media-list">
-                                        <li class="media">
-                                            <div class="post-comment">
-                                                <a class="pull-left" href="#">
-                                                    <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/5.png" alt="" style="border-left: 0px;">
-                                                </a>
-                                                <div class="media-body" style="padding-bottom: 30px;">
-                                                    <span><i class="fa fa-user"></i>Posted by <a href="#">Daniel</a></span> <span class="label label-success">On</span>
-                                                    <p>You just need imagepng() then. In fact it almost becomes a one-liner:
-                                                        <br><code>imagepng(imagecreatefromstring(file_get_contents($filename)), "output.png");</code>
-                                                        <br>You would use <code>$_FILES["id"]["tmp_name"]</code> for the filename, and a different output filename obviously. But the image format probing itself would become redundant.</p>
-                                                    <ul class="nav navbar-nav post-nav">
-                                                        <li><a href="#"><i class="fa fa-clock-o"></i>February 11,2014</a></li>
-                                                    </ul>
-                                                    <br>
-                                                    <br>
-                                                    <a href="<?php echo base_url('home/chat/'); ?>"><button class="btn btn-default btn-xs">Ask for Video Chat</button></a>
+                                        <h2 class="bold">Answers</h2>
+                                        <ul class="media-list">
+                                            <li class="media">
+                                                <div class="post-comment">
+                                                    <?php
+                                                        if(sizeof($answer_list)==0)
+                                                        { ?>
+                                                            <h3>No Answer Yet</h3>
+                                                        <?php }
+                                                        else
+                                                        { 
+                                                            foreach ($answer_list as $key => $answer) 
+                                                            { ?>
+                                                                <a class="pull-left" href="#">
+                                                                    <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/5.png" alt="" style="border-left: 0px;">
+                                                                </a>
+                                                                <div class="media-body" style="padding-bottom: 30px;">
+                                                                    <span><i class="fa fa-user"></i>Posted by <a href="#"><?php echo $answer['username'] ?></a></span> <span class="label label-success">On</span>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12">
+                                                                            <p style="font-size: 12pt; "><?php echo $answer['answer_text'] ?></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <ul class="nav navbar-nav post-nav">
+                                                                        <li><small><a href="#"><i class="fa fa-clock-o"></i><?php echo $answer['answer_date_posted']; ?></a></small></li>
+                                                                    </ul>
+                                                                    <br>
+                                                                    <br>
+                                                                    <a href="<?php echo base_url('home/chat/'); ?>"><button class="btn btn-default btn-xs">Ask for Video Chat</button></a>
+                                                                </div>
+                                                            <?php }
+                                                        }
+                                                        ?>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <div class="post-comment">
-                                                <a class="pull-left" href="#">
-                                                    <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/6.png" alt="" style="border-left: 0px;">
-                                                </a>
-                                                <div class="media-body">
-                                                    <span><i class="fa fa-user"></i>Posted by <a href="#">Setiyo</a></span> <span class="label label-danger">Off</span>
-                                                    <p>Based on what kind of image it is you could select the correct function to open the file</p>
-                                                    <ul class="nav navbar-nav post-nav">
-                                                        <li><a href="#"><i class="fa fa-clock-o"></i>February 11,2014</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <div class="post-comment">
-                                                <h3>Post your answer</h3>
-                                                <form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
-                                                    <div class="form-group">
-                                                        <input type="text" name="name" class="form-control" required="required" placeholder="Name">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="email" name="email" class="form-control" required="required" placeholder="Email">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your answer"></textarea>
-                                                    </div>                        
-                                                    <div class="form-group">
-                                                        <input type="submit" name="submit" class="btn btn-submit" value="Submit" style="width: auto; ">
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </li>
-                                        
-                                    </ul>                   
-                                </div><!--/Response-area-->
+                                            </li>
+                                        </ul>                   
+                                    </div><!--/Response-area-->
+                                </div>
+                            </div>
+                            <div class="media" style="margin-bottom: 60px; ">
+                                <div class="post-comment">
+                                    <h3>Post your answer</h3>
+                                    <form id="" name="" method="post" action="<?php echo base_url('home/add_answer/'.$question_det['id']); ?>">
+                                        <div class="form-group">
+                                            <input type="text" name="title" class="form-control" required="required" placeholder="Title">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea name="answer" id="answer" required="required" class="form-control" rows="8" placeholder="Your answer"></textarea>
+                                        </div>                        
+                                        <div class="form-group">
+                                            <input type="submit" name="submit" class="btn btn-submit" value="Submit" style="width: auto; ">
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
