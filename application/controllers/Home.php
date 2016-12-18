@@ -10,10 +10,20 @@ class Home extends CI_Controller
 	    $this->load->model('question');
 	    $this->load->model('chat');
 	    
+
 	}
 	public function index()
 	{
-		$this->load->view('home');
+		if ($this->session->userdata('logged') == TRUE) {
+			$userdata = $this->session->userdata('logged');
+			$data = array(
+				'id' => $userdata[0]['id'],
+				'username' => $userdata[0]['username']
+			);
+	    	$this->load->view('home', $data);
+	    }else{
+	    	redirect('auth/login');
+	    }
 	}
 
 	public function category($id)
@@ -45,17 +55,6 @@ class Home extends CI_Controller
 		return;*/
 		$this->load->view('chat', $data);
 	}
-
-	public function login()
-	{
-		$this->load->view('login');
-	}
-
-	public function signup()
-	{
-		$this->load->view('signup');
-	}
-
 
 	public function create_question()
 	{

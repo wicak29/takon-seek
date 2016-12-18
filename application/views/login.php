@@ -40,7 +40,13 @@
         </div>
     </header>
     <!--/#header-->
-
+    <?php
+        if (isset($error)) {
+            echo $error;
+        }else if (isset($result)) {
+            echo $result;
+        }
+    ?>
     <section id="about-company" class="padding-top wow fadeInUp" data-wow-duration="400ms" data-wow-delay="400ms" style="padding-top: 0px; ">
         <div class="container">
             <div class="row">
@@ -51,9 +57,9 @@
                         </div>
                         <h1 class="title">TAKON SEEK</h1>
                         <div class="panel-body">
-                            <form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
+                            <form id="main-contact-form" name="contact-form" method="post" action="login">
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control" required="required" placeholder="Username">
+                                <input type="text" name="username" class="form-control" required="required" placeholder="Username">
                             </div>
                             <div class="form-group">
                                 <input type="password" name="password" class="form-control" required="required" placeholder="Password">
@@ -73,8 +79,6 @@
     <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/lightbox.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/wow.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/main.js"></script>   
     <script type="text/javascript">
     </script>
 </body>
