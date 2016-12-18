@@ -108,7 +108,7 @@
                                                                     <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/5.png" alt="" style="border-left: 0px;">
                                                                 </a>
                                                                 <div class="media-body" style="padding-bottom: 30px;">
-                                                                    <span><i class="fa fa-user"></i>Posted by <a href="#"><?php echo $answer['username'] ?></a></span> <span class="label label-success">On</span>
+                                                                    <span><i class="fa fa-user"></i>Posted by <a href="#"><?php echo $answer['username'] ?></a></span> <span class="label label-success">Online</span>
                                                                     <div class="row">
                                                                         <div class="col-sm-12">
                                                                             <p style="font-size: 12pt; "><?php echo $answer['answer_text'] ?></p>
