@@ -9,18 +9,6 @@ class User_model extends CI_Model
 		$this->load->database();
 	}
 
-	public function add_user($no, $nama, $telp)
-	{
-		// INSERT into 'user' values ('')
-		$data = array(
-			'no_identitas' => $no,
-			'nama_user' => $nama,
-			'no_telepon_user' => $telp
-		);
-
-		$query = $this->db->insert('user', $data);
-		return $query;
-	}
 	public function login($data) {
 		$where = 'username="'.$data['username'].'" and password="'.$data['password'].'"';
 		$query = $this->db->select('*')

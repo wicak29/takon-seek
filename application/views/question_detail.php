@@ -119,7 +119,7 @@
                                                                     </ul>
                                                                     <br>
                                                                     <br>
-                                                                    <a href="<?php echo base_url('home/chat/'); ?>"><button class="btn btn-default btn-xs">Ask for Video Chat</button></a>
+                                                                    <a href="<?php echo base_url('home/chat/'.$answer['id']); ?>"><button class="btn btn-default btn-xs">Ask for Video Chat</button></a>
                                                                 </div>
                                                             <?php }
                                                         }
