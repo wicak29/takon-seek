@@ -46,6 +46,11 @@ class Home extends CI_Controller
 
 	public function question_detail($id)
 	{
+		$userdata = $this->session->userdata('logged');
+		$user = array(
+				'id' => $userdata[0]['id'],
+				'username' => $userdata[0]['username']
+			);
 		$data['question_det'] = $this->question->getQuestionDetail($id);
 		$data['answer_list'] = $this->question->getAnswerById($id);
 		if(isset($data['question_det']['video_id']))
@@ -55,21 +60,35 @@ class Home extends CI_Controller
 		// print_r($data);
 		// return;
 		$this->load->view('header');
+		$this->load->view('navbar', $user);
 		$this->load->view('question_detail', $data);
 	}
 
 	public function chat($id)
 	{
+		$userdata = $this->session->userdata('logged');
+		$user = array(
+				'id' => $userdata[0]['id'],
+				'username' => $userdata[0]['username']
+			);
 		$data['user'] = $this->chat->getUser($id);
 		/*print_r($data);
 		return;*/
 		$this->load->view('header');
+		$this->load->view('navbar', $user);
 		$this->load->view('chat', $data);
 	}
 
 	public function create_question()
 	{
+		$userdata = $this->session->userdata('logged');
+		$user = array(
+				'id' => $userdata[0]['id'],
+				'username' => $userdata[0]['username']
+			);
+
 		$this->load->view('header');
+		$this->load->view('navbar', $user);
 		$this->load->view('create_question');
 	}
 

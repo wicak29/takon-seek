@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span> 
             </button>
-            <a target="_blank" href="<?php echo base_url('/home');?>" class="navbar-brand" style="align-items: center; display: flex;">TakonSeek</a>
+            <a href="<?php echo base_url('home');?>" class="navbar-brand" style="align-items: center; display: flex;">TakonSeek</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
