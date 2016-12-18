@@ -20,6 +20,7 @@ class Home extends CI_Controller
 				'id' => $userdata[0]['id'],
 				'username' => $userdata[0]['username']
 			);
+			$this->load->view('header');
 	    	$this->load->view('home', $data);
 	    }else{
 	    	redirect('auth/login');
@@ -32,6 +33,7 @@ class Home extends CI_Controller
 		$data['question_list'] = $this->question->getQuestionByCat($id);
 		// print_r($data);
 		// return;
+		$this->load->view('header');
 		$this->load->view('question_list', $data);
 	}
 
@@ -45,6 +47,7 @@ class Home extends CI_Controller
 		}
 		// print_r($data);
 		// return;
+		$this->load->view('header');
 		$this->load->view('question_detail', $data);
 	}
 
@@ -53,11 +56,13 @@ class Home extends CI_Controller
 		$data['user'] = $this->chat->getUser($id);
 		/*print_r($data);
 		return;*/
+		$this->load->view('header');
 		$this->load->view('chat', $data);
 	}
 
 	public function create_question()
 	{
+		$this->load->view('header');
 		$this->load->view('create_question');
 	}
 
