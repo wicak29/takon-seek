@@ -1,20 +1,3 @@
-<body>
-	<header id="header">      
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 overflow">
-                   <div class="social-icons pull-right">
-                        <?php if (isset($username)) {
-                            echo $username;
-                        } ?><br>
-                        <a href="">www.takon-seek.com</a>
-                    </div> 
-                </div>
-             </div>
-        </div>
-    </header>
-    <!--/#header-->
-
      <section id="page-breadcrumb">
         <div class="vertical-center sun">
              <div class="container">

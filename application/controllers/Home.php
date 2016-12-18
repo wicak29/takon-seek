@@ -21,6 +21,7 @@ class Home extends CI_Controller
 				'username' => $userdata[0]['username']
 			);
 			$this->load->view('header');
+			$this->load->view('navbar', $data);
 	    	$this->load->view('home', $data);
 	    }else{
 	    	redirect('auth/login');
@@ -29,11 +30,17 @@ class Home extends CI_Controller
 
 	public function category($id)
 	{
+		$userdata = $this->session->userdata('logged');
+		$user = array(
+				'id' => $userdata[0]['id'],
+				'username' => $userdata[0]['username']
+			);
 		$data['id_kategori'] = $id;
 		$data['question_list'] = $this->question->getQuestionByCat($id);
 		// print_r($data);
 		// return;
 		$this->load->view('header');
+		$this->load->view('navbar', $user);
 		$this->load->view('question_list', $data);
 	}
 
