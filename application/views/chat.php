@@ -70,7 +70,10 @@
                     <div class="row">
                         <div class="col-sm-2">
                             <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/5.png" alt="" style="border-left: 0px;">
-                            <h3 style="font-weight: bold; padding-top: 5%;text-align: center;">Namanya Siapa</h3>
+                            <h3 style="font-weight: bold; padding-top: 5%;text-align: center;">
+                            <?php echo $user[0]['username']; ?>
+                                
+                            </h3>
                                 <div style="text-align: center;">
                             <span class="label label-success">Online</span>
                             </div>

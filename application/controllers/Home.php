@@ -8,6 +8,8 @@ class Home extends CI_Controller
 		parent::__construct();
 	    $this->load->helper(array('url','html','form'));
 	    $this->load->model('question');
+	    $this->load->model('chat');
+	    
 	}
 	public function index()
 	{
@@ -36,15 +38,24 @@ class Home extends CI_Controller
 		$this->load->view('question_detail', $data);
 	}
 
-	public function chat()
+	public function chat($id)
 	{
-		$this->load->view('chat');
+		$data['user'] = $this->chat->getUser($id);
+		/*print_r($data);
+		return;*/
+		$this->load->view('chat', $data);
 	}
 
 	public function login()
 	{
 		$this->load->view('login');
 	}
+
+	public function signup()
+	{
+		$this->load->view('signup');
+	}
+
 
 	public function create_question()
 	{
