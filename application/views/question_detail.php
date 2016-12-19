@@ -83,6 +83,7 @@
                                                 ?>
                                                 <div class="row">
                                                     <div class="col-sm-12">
+                                                        <br>
                                                         <p><?php echo $question_det['text']; ?></p>
                                                     </div>
                                                 </div>
@@ -134,9 +135,6 @@
                                 <div class="post-comment">
                                     <h3>Post your answer</h3>
                                     <form id="" name="" method="post" action="<?php echo base_url('home/add_answer/'.$question_det['id']); ?>">
-                                        <div class="form-group">
-                                            <input type="text" name="title" class="form-control" required="required" placeholder="Title">
-                                        </div>
                                         <div class="form-group">
                                             <textarea name="answer" id="answer" required="required" class="form-control" rows="8" placeholder="Your answer"></textarea>
                                         </div>                        
