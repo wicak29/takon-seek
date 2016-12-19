@@ -3,7 +3,7 @@
              <div class="container">
                 <div class="row">
                     <div class="action">
-                        <div class="col-sm-12">
+                        <div class="col-sm-7">
                             <h1 class="title">TAKON SEEK</h1>
                             <p>Ask First Before You Get Lost</p>
                         </div>                                                                                
@@ -22,7 +22,7 @@
     <section id="blog-details" class="">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-sm-7">
+                <div class="col-md-9 col-sm-7">
                     <div class="row">
                          <div class="col-md-12 col-sm-12">
                             <div class="single-blog blog-details two-column">
@@ -56,37 +56,37 @@
                                         <h2 class="bold">Answers</h2>
                                         <ul class="media-list">
                                             <li class="media">
-                                                <div class="post-comment">
-                                                    <?php
-                                                        if(sizeof($answer_list)==0)
+                                                <?php
+                                                    if(sizeof($answer_list)==0)
+                                                    { ?>
+                                                        <h3>No Answer Yet</h3>
+                                                    <?php }
+                                                    else
+                                                    { 
+                                                        foreach ($answer_list as $key => $answer) 
                                                         { ?>
-                                                            <h3>No Answer Yet</h3>
-                                                        <?php }
-                                                        else
-                                                        { 
-                                                            foreach ($answer_list as $key => $answer) 
-                                                            { ?>
-                                                                <a class="pull-left" href="#">
-                                                                    <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/5.png" alt="" style="border-left: 0px;">
-                                                                </a>
-                                                                <div class="media-body" style="padding-bottom: 30px;">
-                                                                    <span><i class="fa fa-user"></i>Posted by <a href="#"><?php echo $answer['username'] ?></a></span> <span class="label label-success">Online</span>
-                                                                    <div class="row">
-                                                                        <div class="col-sm-12">
-                                                                            <p style="font-size: 12pt; "><?php echo $answer['answer_text'] ?></p>
-                                                                        </div>
+                                                        <div class="post-comment">
+                                                            <a class="pull-left" href="#">
+                                                                <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/5.png" alt="" style="border-left: 0px;">
+                                                            </a>
+                                                            <div class="media-body" style="padding-bottom: 30px;">
+                                                                <span><i class="fa fa-user"></i>Posted by <a href="#"><?php echo $answer['username'] ?></a></span> <span class="label label-success">Online</span>
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <p style="font-size: 12pt; "><?php echo $answer['answer_text'] ?></p>
                                                                     </div>
-                                                                    <ul class="nav navbar-nav post-nav">
-                                                                        <li><small><a href="#"><i class="fa fa-clock-o"></i><?php echo $answer['answer_date_posted']; ?></a></small></li>
-                                                                    </ul>
-                                                                    <br>
-                                                                    <br>
-                                                                    <a href="<?php echo base_url('home/chat/'.$answer['id']); ?>"><button class="btn btn-default btn-xs">Ask for Video Chat</button></a>
                                                                 </div>
-                                                            <?php }
-                                                        }
-                                                        ?>
-                                                </div>
+                                                                <ul class="nav navbar-nav post-nav">
+                                                                    <li><small><a href="#"><i class="fa fa-clock-o"></i><?php echo $answer['answer_date_posted']; ?></a></small></li>
+                                                                </ul>
+                                                                <br>
+                                                                <br>
+                                                                <a href="<?php echo base_url('home/chat/'.$answer['id']); ?>"><button class="btn btn-default btn-xs">Ask for Video Chat</button></a>
+                                                            </div>
+                                                        </div>  
+                                                        <?php }
+                                                    }
+                                                    ?>
                                             </li>
                                         </ul>                   
                                     </div><!--/Response-area-->
@@ -97,8 +97,15 @@
                                     <h3>Post your answer</h3>
                                     <form id="" name="" method="post" action="<?php echo base_url('home/add_answer/'.$question_det['id']); ?>">
                                         <div class="form-group">
-                                            <textarea name="answer" id="answer" required="required" class="form-control" rows="8" placeholder="Your answer"></textarea>
-                                        </div>                        
+                                            <textarea id="elm1" name="answer" rows="15" cols="80" style="width: 80%"></textarea>
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <textarea id="elm1" name="elm1" rows="15" cols="80" style="width: 80%"></textarea>
+                                        </div> -->
+                                        <!-- <div class="form-group">
+                                            <label>Upload Video (if you want)</label>
+                                            <input id="video_upload" type="file" name="video_upload" class="form-control">
+                                        </div>                         -->
                                         <div class="form-group">
                                             <input type="submit" name="submit" class="btn btn-submit" value="Submit" style="width: auto; ">
                                         </div>
@@ -108,75 +115,18 @@
                         </div>
                     </div>
                  </div>
-                <!-- <div class="col-md-3 col-sm-5">
+                 <div class="col-md-3 col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms" style="margin-top: 50px; ">
                     <div class="sidebar blog-sidebar">
-                        <div class="sidebar-item  recent">
-                            <h3>Comments</h3>
-                            <div class="media">
-                                <div class="pull-left">
-                                    <a href="#"><img src="images/portfolio/project1.jpg" alt=""></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit,</a></h4>
-                                    <p>posted on  07 March 2014</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="pull-left">
-                                    <a href="#"><img src="images/portfolio/project2.jpg" alt=""></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit,</a></h4>
-                                    <p>posted on  07 March 2014</p>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="pull-left">
-                                    <a href="#"><img src="images/portfolio/project3.jpg" alt=""></a>
-                                </div>
-                                <div class="media-body">
-                                    <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit,</a></h4>
-                                    <p>posted on  07 March 2014</p>
-                                </div>
-                            </div>
-                        </div>
                         <div class="sidebar-item categories">
                             <h3>Categories</h3>
                             <ul class="nav navbar-stacked">
-                                <li><a href="#">Lorem ipsum<span class="pull-right">(1)</span></a></li>
-                                <li class="active"><a href="#">Dolor sit amet<span class="pull-right">(8)</span></a></li>
-                                <li><a href="#">Adipisicing elit<span class="pull-right">(4)</span></a></li>
-                                <li><a href="#">Sed do<span class="pull-right">(9)</span></a></li>
-                                <li><a href="#">Eiusmod<span class="pull-right">(3)</span></a></li>
-                                <li><a href="#">Mockup<span class="pull-right">(4)</span></a></li>
-                                <li><a href="#">Ut enim ad minim <span class="pull-right">(2)</span></a></li>
-                                <li><a href="#">Veniam, quis nostrud <span class="pull-right">(8)</span></a></li>
-                            </ul>
-                        </div>
-                        <div class="sidebar-item tag-cloud">
-                            <h3>Tag Cloud</h3>
-                            <ul class="nav nav-pills">
-                                <li><a href="#">Corporate</a></li>
-                                <li><a href="#">Joomla</a></li>
-                                <li><a href="#">Abstract</a></li>
-                                <li><a href="#">Creative</a></li>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Product</a></li>
-                            </ul>
-                        </div>
-                        <div class="sidebar-item popular">
-                            <h3>Latest Photos</h3>
-                            <ul class="gallery">
-                                <li><a href="#"><img src="images/portfolio/popular1.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/portfolio/popular2.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/portfolio/popular3.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/portfolio/popular4.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/portfolio/popular5.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="images/portfolio/popular1.jpg" alt=""></a></li>
+                                <li class=""><a href="<?php echo base_url('home/category/1'); ?>">Games</a></li>
+                                <li class=""><a href="<?php echo base_url('home/category/2'); ?>">Technology</a></li>
+                                <li class=""><a href="<?php echo base_url('home/category/3'); ?>">Networking</a></li>
                             </ul>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>
@@ -187,5 +137,144 @@
     <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/lightbox.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/wow.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/main.js"></script>   
+
+    <!-- TEXT EDITOR -->
+    <script src="<?php echo base_url('assets/tinymce'); ?>/js/tinymce/tinymce.dev.js"</script>
+    <script src="<?php echo base_url('assets/tinymce'); ?>/js/tinymce/plugins/table/plugin.dev.js"></script>
+    <script src="<?php echo base_url('assets/tinymce'); ?>/js/tinymce/plugins/paste/plugin.dev.js"></script>
+    <script src="<?php echo base_url('assets/tinymce'); ?>/js/tinymce/plugins/spellchecker/plugin.dev.js"></script>
+    <script>
+        var RTL = false;
+
+        function mockSpellcheck(method, data, success) {
+            if (method == "spellcheck") {
+                var words = data.match(this.getWordCharPattern());
+                var suggestions = {};
+
+                for (var i = 0; i < words.length; i++) {
+                    suggestions[words[i]] = ["First", "second"];
+                }
+
+                success({words: suggestions, dictionary: true});
+            }
+
+            if (method == "addToDictionary") {
+                success();
+            }
+        }
+
+        tinymce.init({
+            selector: "textarea#elm1",
+            rtl_ui: RTL,
+
+            theme: "modern",
+            plugins: [
+                "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                "save table contextmenu directionality emoticons template paste textcolor importcss colorpicker textpattern"
+            ],
+            external_plugins: {
+                //"moxiemanager": "/moxiemanager-php/plugin.js"
+            },
+            content_css: "<?php echo base_url('assets/tinymce'); ?>/tests/manual/css/development.css",
+            add_unload_trigger: false,
+
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons table",
+
+            image_advtab: true,
+
+            style_formats: [
+                {title: 'Bold text', format: 'h1'},
+                {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+                {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+                {title: 'Example 1', inline: 'span', classes: 'example1'},
+                {title: 'Example 2', inline: 'span', classes: 'example2'},
+                {title: 'Table styles'},
+                {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+            ],
+
+            template_replace_values : {
+                username : "Jack Black"
+            },
+
+            template_preview_replace_values : {
+                username : "Preview user name"
+            },
+
+            link_class_list: [
+                {title: 'Example 1', value: 'example1'},
+                {title: 'Example 2', value: 'example2'}
+            ],
+
+            image_class_list: [
+                {title: 'Example 1', value: 'example1'},
+                {title: 'Example 2', value: 'example2'}
+            ],
+
+            templates: [
+                {title: 'Some title 1', description: 'Some desc 1', content: '<strong class="red">My content: {$username}</strong>'},
+                {title: 'Some title 2', description: 'Some desc 2', url: 'development.html'}
+            ],
+
+            spellchecker_callback: mockSpellcheck
+        });
+
+        tinymce.init({
+            selector: "textarea#small",
+            toolbar_items_size: 'small',
+            rtl_ui: RTL,
+
+            theme: "modern",
+            plugins: [
+                "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                "save table contextmenu directionality emoticons template paste textcolor importcss colorpicker textpattern"
+            ],
+            external_plugins: {
+                //"moxiemanager": "/moxiemanager-php/plugin.js"
+            },
+            content_css: "css/development.css",
+            add_unload_trigger: false,
+
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons table",
+
+            image_advtab: true,
+
+            style_formats: [
+                {title: 'Bold text', format: 'h1'},
+                {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+                {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+                {title: 'Example 1', inline: 'span', classes: 'example1'},
+                {title: 'Example 2', inline: 'span', classes: 'example2'},
+                {title: 'Table styles'},
+                {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+            ],
+
+            template_replace_values : {
+                username : "Jack Black"
+            },
+
+            template_preview_replace_values : {
+                username : "Preview user name"
+            },
+
+            link_class_list: [
+                {title: 'Example 1', value: 'example1'},
+                {title: 'Example 2', value: 'example2'}
+            ],
+
+            image_class_list: [
+                {title: 'Example 1', value: 'example1'},
+                {title: 'Example 2', value: 'example2'}
+            ],
+
+            templates: [
+                {title: 'Some title 1', description: 'Some desc 1', content: '<strong class="red">My content: {$username}</strong>'},
+                {title: 'Some title 2', description: 'Some desc 2', url: 'development.html'}
+            ],
+
+            spellchecker_callback: mockSpellcheck
+        });
+    </script>
 </body>
 </html>

@@ -79,6 +79,7 @@ class Home extends CI_Controller
 		// print_r($data);
 		// return;
 		$this->load->view('header');
+		// $this->load->view('header_tiny');
 		$this->load->view('navbar', $user);
 		$this->load->view('question_detail', $data);
 	}
@@ -115,6 +116,38 @@ class Home extends CI_Controller
 	{
 		$data = $this->input->post();
 		$data['qid'] = $id;
+		// print_r($data);
+		// return;
+
+		if (isset($_FILES['video_upload']['name']) && $_FILES['video_upload']['name'] != '') 
+		{
+			unset($config);
+	        $date = date("ymd");
+	        $configVideo['upload_path'] = './assets/video/comments';
+	        $configVideo['max_size'] = '60000';
+	        $configVideo['allowed_types'] = 'avi|flv|wmv|mp3|mp4';
+	        $configVideo['overwrite'] = FALSE;
+	        $configVideo['remove_spaces'] = TRUE;
+	        $video_name = $date.'-'.$_FILES['video_upload']['name'];
+	        $configVideo['file_name'] = $video_name;
+
+	        $this->load->library('upload', $configVideo);
+	        $this->upload->initialize($configVideo);
+
+	        if(!$this->upload->do_upload('video_upload')) 
+	        {
+	            echo $this->upload->display_errors();
+	        }
+	        else
+	        {
+	            $videoDetails = $this->upload->data();
+	            $data['with_video'] =2;
+	            $data['video_detail'] = $videoDetails;
+	            $data['video_name']= $videoDetails['file_name'];
+	        }
+
+	    }
+
 		$result = $this->question->addAnswer($data);
 		if ($result) redirect('home/question_detail/'.$id);
 	}
