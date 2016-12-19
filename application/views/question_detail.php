@@ -7,6 +7,11 @@
                             <h1 class="title">TAKON SEEK</h1>
                             <p>Ask First Before You Get Lost</p>
                         </div>                                                                                
+                        <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <div class="tour-button">
+                                <a href="<?php echo base_url('home/create_question'); ?>" class="btn btn-common" style="margin-top: 20px;">ASK NEW QUESTION!</a>
+                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -40,8 +45,7 @@
                                                 ?>
                                                 <div class="row">
                                                     <div class="col-sm-12">
-                                                        <br>
-                                                        <p><?php echo $question_det['text']; ?></p>
+                                                        <p style="font-size: 12pt; "><?php echo $question_det['text']; ?></p>
                                                     </div>
                                                 </div>
                                                 <!-- <span>Website:<a href="www.jooomshaper.com"> www.jooomshaper.com</a></span> -->

@@ -6,9 +6,15 @@
              <div class="container">
                 <div class="row">
                     <div class="action">
-                        <div class="col-sm-12">
+                        <div class="col-sm-7">
                             <h1 class="title">Questions List</h1>
+                            <p>You can search similiar problems with you</p>
                         </div>                                                                                
+                        <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <div class="tour-button">
+                                <a href="<?php echo base_url('home/create_question'); ?>" class="btn btn-common" style="margin-top: 20px;">ASK NEW QUESTION!</a>
+                             </div>
+                        </div>
                     </div>
                 </div>
             </div>

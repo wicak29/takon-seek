@@ -3,7 +3,7 @@
              <div class="container">
                 <div class="row">
                     <div class="action">
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
                             <h1 class="title">Create Question</h1>
                             <p>You can ask anyone about your confusion</p>
                         </div>                                                                                
@@ -45,7 +45,7 @@
                         </div>
                     </form>
                  </div>
-                <div class="col-md-3 col-sm-5">
+                <div class="col-md-3 col-sm-5 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
                     <div class="sidebar blog-sidebar">
                         <div class="sidebar-item categories">
                             <h3>Categories</h3>
