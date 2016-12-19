@@ -11,7 +11,7 @@ class Auth extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('chat');
+		$this->load->view('login');
 	}
 	public function login()
 	{

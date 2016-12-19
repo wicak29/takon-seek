@@ -93,8 +93,9 @@
                                 </div>
                             </div>
                             <div class="media" style="margin-bottom: 60px; ">
+
                                 <div class="post-comment">
-                                    <h3>Post your answer</h3>
+                                    <h2 class="bold">Post your answer</h2>
                                     <form id="" name="" method="post" action="<?php echo base_url('home/add_answer/'.$question_det['id']); ?>">
                                         <div class="form-group">
                                             <textarea id="elm1" name="answer" rows="15" cols="80" style="width: 80%"></textarea>
@@ -138,7 +139,7 @@
     <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/wow.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/multicolor'); ?>/js/main.js"></script>   
 
-    <!-- TEXT EDITOR -->
+    <!-- TEXT EDITOR TINYMCE-->
     <script src="<?php echo base_url('assets/tinymce'); ?>/js/tinymce/tinymce.dev.js"</script>
     <script src="<?php echo base_url('assets/tinymce'); ?>/js/tinymce/plugins/table/plugin.dev.js"></script>
     <script src="<?php echo base_url('assets/tinymce'); ?>/js/tinymce/plugins/paste/plugin.dev.js"></script>

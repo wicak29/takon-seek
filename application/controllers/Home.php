@@ -51,12 +51,14 @@ class Home extends CI_Controller
 			);
 		$data['id_kategori'] = $id;
 		$data['question_list'] = $this->question->getQuestionByCat($id);
+		// print_r($data['question_list']);
+		// return;
 
 		foreach ($data['question_list'] as $key => $value) {
 			$data['question_list'][$key]['total_answer'] = $this->question->countAnswer($value['id']);
 		}
 
-		// print_r($data);
+		// print_r($data['question_list']);
 		// return;
 		$this->load->view('header');
 		$this->load->view('navbar', $user);

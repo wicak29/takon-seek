@@ -82,7 +82,7 @@ class Question extends CI_Model
 
 	public function getQuestionByCat($id)
 	{
-		$query = $this->db->query('SELECT * FROM question, user WHERE question.user_id=user.id and question.category='.$id);
+		$query = $this->db->query('SELECT * FROM question, user WHERE question.user_id=user.id AND question.category='.$id);
 		return $query->result_array();
 	}
 }
