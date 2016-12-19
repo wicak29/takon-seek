@@ -1,3 +1,4 @@
+     <?php $kategori=array('', 'Games', 'Technology', 'Networking'); ?>
      <section id="page-breadcrumb">
         <div class="vertical-center sun">
              <div class="container">
@@ -18,51 +19,28 @@
             <div class="row">
                 <div class="col-md-9 col-sm-7">
                     <div class="row">
-                         <div class="col-sm-12 col-md-12">
-                            <div class="single-blog single-column">
-                                <div class="post-content overflow">
-                                    <h2 class="post-title bold"><a href="blogdetails.html">Create a new Git Repo</a></h2>
-                                    <h3 class="post-author"><a href="#">Posted by Daniel</a></h3>
-                                    <a href="#" class="read-more">View More</a>
-                                    <div class="post-bottom overflow">
-                                        <ul class="nav navbar-nav post-nav">
-                                            <li><a href="#"><i class="fa fa-tag"></i>Tech</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i>3 Answer</a></li>
-                                        </ul>
+                        <?php
+                        if (isset($all_question))
+                        {
+                            foreach ($all_question as $key => $q) { ?>
+                            <div class="col-sm-12 col-md-12">
+                                <div class="single-blog single-column">
+                                    <div class="post-content overflow">
+                                        <h2 class="post-title bold"><a href="<?php echo base_url('home/question_detail/'.$q['id']); ?>"><?php echo $q['title']; ?></a></h2>
+                                        <h3 class="post-author"><a href="#">Posted by <?php echo "wicak" ?></a></h3>
+                                        <div class="post-bottom overflow">
+                                            <ul class="nav navbar-nav post-nav">
+                                                <li><a href="#"><i class="fa fa-tag"></i><?php echo $kategori[$q['category']]; ?></a></li>
+                                                <li><a href="#"><i class="fa fa-comments"></i><?php echo $q['total_answer']; ?> Answer</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12">
-                            <div class="single-blog single-column">
-                                <div class="post-content overflow">
-                                    <h2 class="post-title bold"><a href="blogdetails.html">Create a new Git Repo</a></h2>
-                                    <h3 class="post-author"><a href="#">Posted by Daniel</a></h3>
-                                    <a href="#" class="read-more">View More</a>
-                                    <div class="post-bottom overflow">
-                                        <ul class="nav navbar-nav post-nav">
-                                            <li><a href="#"><i class="fa fa-tag"></i>Tech</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i>3 Answer</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12">
-                            <div class="single-blog single-column">
-                                <div class="post-content overflow">
-                                    <h2 class="post-title bold"><a href="blogdetails.html">Create a new Git Repo</a></h2>
-                                    <h3 class="post-author"><a href="#">Posted by Daniel</a></h3>
-                                    <a href="#" class="read-more">View More</a>
-                                    <div class="post-bottom overflow">
-                                        <ul class="nav navbar-nav post-nav">
-                                            <li><a href="#"><i class="fa fa-tag"></i>Tech</a></li>
-                                            <li><a href="#"><i class="fa fa-comments"></i>0 Answer</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <?php }
+                        }
+
+                        ?>
                     </div>
                  </div>
                 <div class="col-md-3 col-sm-5">
@@ -70,9 +48,9 @@
                         <div class="sidebar-item categories">
                             <h3>Categories</h3>
                             <ul class="nav navbar-stacked">
-                                <li><a href="#">Art<span class="pull-right">(1)</span></a></li>
-                                <li class="active"><a href="#">Tech<span class="pull-right">(8)</span></a></li>
-                                <li><a href="#">Networking<span class="pull-right">(4)</span></a></li>
+                                <li class="<?php if($id_kategori==1) echo "active"; ?>"><a href="<?php echo base_url('home/category/1'); ?>">Games</a></li>
+                                <li class="<?php if($id_kategori==2) echo "active"; ?>"><a href="<?php echo base_url('home/category/2'); ?>">Technology</a></li>
+                                <li class="<?php if($id_kategori==3) echo "active"; ?>"><a href="<?php echo base_url('home/category/3'); ?>">Networking</a></li>
                             </ul>
                         </div>
                     </div>

@@ -64,7 +64,7 @@
                                 <input type="password" name="confirm_password" class="form-control" required="required" placeholder="Confirm Password">
                             </div>
                             <div class="form-group">
-                                <input type="submit" name="submit" class="btn btn-submit" value="Login">
+                                <input type="submit" name="submit" class="btn btn-submit" value="Sign Up">
                             </div>
                         </form>
                         </div>

@@ -9,8 +9,11 @@ class Home extends CI_Controller
 	    $this->load->helper(array('url','html','form'));
 	    $this->load->model('question');
 	    $this->load->model('chat');
-	    
-
+	    if(!$this->session->has_userdata('logged'))
+		{
+			redirect('auth/login');
+		}
+		$this->user_login = $this->session->userdata('logged');
 	}
 	public function index()
 	{
@@ -20,12 +23,22 @@ class Home extends CI_Controller
 				'id' => $userdata[0]['id'],
 				'username' => $userdata[0]['username']
 			);
-			$this->load->view('header');
-			$this->load->view('navbar', $data);
-	    	$this->load->view('home', $data);
 	    }else{
 	    	redirect('auth/login');
+	    	return;
 	    }
+	    $data['id_kategori'] = 0;
+	    $data['all_question'] = $this->question->getAllQuestion();
+
+	    foreach ($data['all_question'] as $key => $value) {
+			$data['all_question'][$key]['total_answer'] = $this->question->countAnswer($value['id']);
+		}
+	    // print_r($data);
+	    // return;
+
+	    $this->load->view('header');
+		$this->load->view('navbar', $data);
+    	$this->load->view('home', $data);
 	}
 
 	public function category($id)
@@ -37,6 +50,11 @@ class Home extends CI_Controller
 			);
 		$data['id_kategori'] = $id;
 		$data['question_list'] = $this->question->getQuestionByCat($id);
+
+		foreach ($data['question_list'] as $key => $value) {
+			$data['question_list'][$key]['total_answer'] = $this->question->countAnswer($value['id']);
+		}
+
 		// print_r($data);
 		// return;
 		$this->load->view('header');
@@ -97,18 +115,14 @@ class Home extends CI_Controller
 		$data = $this->input->post();
 		$data['qid'] = $id;
 		$result = $this->question->addAnswer($data);
-		print_r($result);
-		return;
+		if ($result) redirect('home/question_detail/'.$id);
 	}
 
 	public function create_new_question()
 	{
 		$data = $this->input->post();
 		$data['with_video'] = 1;
-		// $q_name = $data['q_name'];
-		// $q_text = $data['q_text'];
-		// $kategori = $data['kategori'];
-		// return;
+		$data['user_id'] = $this->user_login[0]['id'];
 
 		if (isset($_FILES['video_upload']['name']) && $_FILES['video_upload']['name'] != '') 
 		{

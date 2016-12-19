@@ -29,11 +29,11 @@
                                 <div class="single-blog single-column">
                                     <div class="post-content overflow">
                                         <h2 class="post-title bold"><a href="<?php echo base_url('home/question_detail/'.$value['id']); ?>"><?php echo $value['title']; ?></a></h2>
-                                        <h3 class="post-author"><a href="#">Posted by Melody</a></h3>
+                                        <h3 class="post-author"><a href="#">Posted by <?php echo $value['username']; ?></a></h3>
                                         <div class="post-bottom overflow">
                                             <ul class="nav navbar-nav post-nav">
                                                 <li><a href="#"><i class="fa fa-tag"></i><?php echo $kategori[$value['category']]; ?></a></li>
-                                                <!-- <li><a href="#"><i class="fa fa-comments"></i>0 Answer</a></li> -->
+                                                <li><a href="#"><i class="fa fa-comments"></i><?php echo $value['total_answer']; ?> Answer</a></li>
                                             </ul>
                                         </div>
                                     </div>

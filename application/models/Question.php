@@ -30,7 +30,7 @@ class Question extends CI_Model
 			'text' => $q['q_text'],
 			'date_posted' => date('Y-m-d h:i:sa'),
 			'category' => $q['kategori'],
-			'user_id' => '1',
+			'user_id' => $q['user_id'],
 			'video_id' => $insert_id,
 			);
 		$query = $this->db->insert('question', $data);
@@ -48,6 +48,12 @@ class Question extends CI_Model
 			);
 		$query = $this->db->insert('answer', $data);
 		return $query;
+	}
+
+	public function getAllQuestion()
+	{
+		$query = $this->db->get('question');
+		return $query->result_array();
 	}
 
 	public function getQuestionDetail($id)
@@ -68,9 +74,15 @@ class Question extends CI_Model
 		return $query->result_array();
 	}
 
+	public function countAnswer($id)
+	{
+		$query = $this->db->query('SELECT * FROM answer WHERE question_id='.$id);
+		return $query->num_rows();
+	}
+
 	public function getQuestionByCat($id)
 	{
-		$query = $this->db->get_where('question', array('category'=>$id));
+		$query = $this->db->query('SELECT * FROM question, user WHERE question.user_id=user.id and question.category='.$id);
 		return $query->result_array();
 	}
 }

@@ -13,7 +13,8 @@ class Auth extends CI_Controller
 	{
 		$this->load->view('chat');
 	}
-	public function login(){
+	public function login()
+	{
 		$errors = array_filter($_POST);
 		if (!empty($errors)) {
 			$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
@@ -78,5 +79,7 @@ class Auth extends CI_Controller
 		}else
 			$this->load->view('signup');
 	}
+
+	// public function 
 
 }
