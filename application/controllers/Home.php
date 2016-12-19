@@ -15,6 +15,7 @@ class Home extends CI_Controller
 		}
 		$this->user_login = $this->session->userdata('logged');
 	}
+	
 	public function index()
 	{
 		if ($this->session->userdata('logged') == TRUE) {

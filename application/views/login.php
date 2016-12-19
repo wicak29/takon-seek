@@ -29,7 +29,7 @@
 
 <body>
 	<header id="header">      
-        <div class="container">
+        <!-- <div class="container">
             <div class="row">
                 <div class="col-sm-12 overflow">
                    <div class="social-icons pull-right">
@@ -37,21 +37,24 @@
                     </div> 
                 </div>
              </div>
-        </div>
+        </div> -->
     </header>
     <!--/#header-->
-    <?php
-        if (isset($error)) {
-            echo $error;
-        }else if (isset($result)) {
-            echo $result;
-        }
-    ?>
     <section id="about-company" class="padding-top wow fadeInUp" data-wow-duration="400ms" data-wow-delay="400ms" style="padding-top: 0px; ">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center" style="text-align: center; ">
                     <div class="panel panel-info" style="width: 500px; display: inline-block;">
+                        <?php if (isset($error)) {
+                        echo '<div class="alert alert-danger fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4>';
+                        echo $error;
+                        echo '</h4></div>';
+                        } else if (isset($result)) {
+                        echo $result;
+                        echo '<div class="alert alert-danger fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4>';
+                        echo $result;
+                        echo '</h4></div>';
+                        }?>
                         <div class="panel-heading">
                             Login Form
                         </div>
@@ -66,6 +69,10 @@
                             </div>
                             <div class="form-group">
                                 <input type="submit" name="submit" class="btn btn-submit" value="Login">
+                            </div>
+                            <div class="form-group">
+                            <h4>Dont have any account? Sign Up First</h4>
+                            <a href="<?php echo base_url('auth/signup'); ?>" class="btn btn-success btn-block">Sign Up</a>
                             </div>
                         </form>
                         </div>

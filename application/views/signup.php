@@ -29,7 +29,7 @@
 
 <body>
 	<header id="header">      
-        <div class="container">
+        <!-- <div class="container">
             <div class="row">
                 <div class="col-sm-12 overflow">
                    <div class="social-icons pull-right">
@@ -37,17 +37,20 @@
                     </div> 
                 </div>
              </div>
-        </div>
+        </div> -->
     </header>
     <!--/#header-->
-<?php if (isset($error)) {
-    echo $error;
-} ?>
+
     <section id="about-company" class="padding-top wow fadeInUp" data-wow-duration="400ms" data-wow-delay="400ms" style="padding-top: 0px; ">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center" style="text-align: center; ">
                     <div class="panel panel-info" style="width: 500px; display: inline-block;">
+                        <?php if (isset($error)) {
+                        echo '<div class="alert alert-danger fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><h4>';
+                        echo $error;
+                        echo '</h4></div>';
+                        } ?>
                         <div class="panel-heading">
                             Signup Form
                         </div>
