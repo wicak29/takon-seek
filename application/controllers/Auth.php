@@ -64,19 +64,32 @@ class Auth extends CI_Controller
 					$result = $this->user_model->signup($data);
 					// echo $result;
 					if ($result == 'success') {
-						$data = array('result' => "Regsitration success. Please login first");
+						$data = array('result' => "Registration success. Please login first");
 						$this->load->view('login', $data);
 					}else if ($result == 'exist') {
 						$data = array('error' => "User already exist");
 						$this->load->view('signup', $data);
 					} else {
-						$data = array('error' => "Error whiel inserting data");
+						$data = array('error' => "Error while inserting data");
 						$this->load->view('signup', $data);
 					}
 				}
 			}
 		}else
 			$this->load->view('signup');
+	}
+
+	public function logout(){
+		$user_data = $this->session->all_userdata();
+		/*print_r($user_data);
+		return;*/
+        foreach ($user_data as $key => $value) {
+            if ($key != 'session_id' && $key != 'id' && $key != 'username') {
+                $this->session->unset_userdata($key);
+            }
+        }
+	    $this->session->sess_destroy();
+	    redirect('auth/login');
 	}
 
 }
