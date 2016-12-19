@@ -1,46 +1,3 @@
-`<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Home | Takon Seek</title>
-    <link href="<?php echo base_url('assets/multicolor'); ?>/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url('assets/multicolor'); ?>/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<?php echo base_url('assets/multicolor'); ?>/css/lightbox.css" rel="stylesheet"> 
-    <link href="<?php echo base_url('assets/multicolor'); ?>/css/animate.min.css" rel="stylesheet"> 
-	<link href="<?php echo base_url('assets/multicolor'); ?>/css/main.css" rel="stylesheet">
-	<link href="<?php echo base_url('assets/multicolor'); ?>/css/responsive.css" rel="stylesheet">
-
-    <!--[if lt IE 9]>
-	    <script src="js/html5shiv.js"></script>
-	    <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="<?php echo base_url('assets/multicolor'); ?>/images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url('assets/multicolor'); ?>/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url('assets/multicolor'); ?>/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url('assets/multicolor'); ?>/mages/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="<?php echo base_url('assets/multicolor'); ?>/images/ico/apple-touch-icon-57-precomposed.png">
-    <script type="text/javascript">var switchTo5x=true;</script>
-    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-    <script type="text/javascript">stLight.options({publisher: "7e8eb33b-fbe0-4915-9b93-09490e3d10df", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-</head><!--/head-->
-
-<body>
-	<header id="header">      
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 overflow">
-                   <div class="social-icons pull-right">
-                        <a href="">www.takon-seek.com</a>
-                    </div> 
-                </div>
-             </div>
-        </div>
-    </header>
-    <!--/#header-->
-
      <section id="page-breadcrumb">
         <div class="vertical-center sun">
              <div class="container">
@@ -109,7 +66,7 @@
                                                                     <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/5.png" alt="" style="border-left: 0px;">
                                                                 </a>
                                                                 <div class="media-body" style="padding-bottom: 30px;">
-                                                                    <span><i class="fa fa-user"></i>Posted by <a href="#"><?php echo $answer['username'] ?></a></span> <span class="label label-success">On</span>
+                                                                    <span><i class="fa fa-user"></i>Posted by <a href="#"><?php echo $answer['username'] ?></a></span> <span class="label label-success">Online</span>
                                                                     <div class="row">
                                                                         <div class="col-sm-12">
                                                                             <p style="font-size: 12pt; "><?php echo $answer['answer_text'] ?></p>
@@ -120,7 +77,7 @@
                                                                     </ul>
                                                                     <br>
                                                                     <br>
-                                                                    <a href="<?php echo base_url('home/chat/'); ?>"><button class="btn btn-default btn-xs">Ask for Video Chat</button></a>
+                                                                    <a href="<?php echo base_url('home/chat/'.$answer['id']); ?>"><button class="btn btn-default btn-xs">Ask for Video Chat</button></a>
                                                                 </div>
                                                             <?php }
                                                         }

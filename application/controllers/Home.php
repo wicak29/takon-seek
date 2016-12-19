@@ -8,23 +8,49 @@ class Home extends CI_Controller
 		parent::__construct();
 	    $this->load->helper(array('url','html','form'));
 	    $this->load->model('question');
+	    $this->load->model('chat');
+	    
+
 	}
 	public function index()
 	{
-		$this->load->view('home');
+		if ($this->session->userdata('logged') == TRUE) {
+			$userdata = $this->session->userdata('logged');
+			$data = array(
+				'id' => $userdata[0]['id'],
+				'username' => $userdata[0]['username']
+			);
+			$this->load->view('header');
+			$this->load->view('navbar', $data);
+	    	$this->load->view('home', $data);
+	    }else{
+	    	redirect('auth/login');
+	    }
 	}
 
 	public function category($id)
 	{
+		$userdata = $this->session->userdata('logged');
+		$user = array(
+				'id' => $userdata[0]['id'],
+				'username' => $userdata[0]['username']
+			);
 		$data['id_kategori'] = $id;
 		$data['question_list'] = $this->question->getQuestionByCat($id);
 		// print_r($data);
 		// return;
+		$this->load->view('header');
+		$this->load->view('navbar', $user);
 		$this->load->view('question_list', $data);
 	}
 
 	public function question_detail($id)
 	{
+		$userdata = $this->session->userdata('logged');
+		$user = array(
+				'id' => $userdata[0]['id'],
+				'username' => $userdata[0]['username']
+			);
 		$data['question_det'] = $this->question->getQuestionDetail($id);
 		$data['answer_list'] = $this->question->getAnswerById($id);
 		if(isset($data['question_det']['video_id']))
@@ -33,21 +59,36 @@ class Home extends CI_Controller
 		}
 		// print_r($data);
 		// return;
+		$this->load->view('header');
+		$this->load->view('navbar', $user);
 		$this->load->view('question_detail', $data);
 	}
 
-	public function chat()
+	public function chat($id)
 	{
-		$this->load->view('chat');
-	}
-
-	public function login()
-	{
-		$this->load->view('login');
+		$userdata = $this->session->userdata('logged');
+		$user = array(
+				'id' => $userdata[0]['id'],
+				'username' => $userdata[0]['username']
+			);
+		$data['user'] = $this->chat->getUser($id);
+		/*print_r($data);
+		return;*/
+		$this->load->view('header');
+		$this->load->view('navbar', $user);
+		$this->load->view('chat', $data);
 	}
 
 	public function create_question()
 	{
+		$userdata = $this->session->userdata('logged');
+		$user = array(
+				'id' => $userdata[0]['id'],
+				'username' => $userdata[0]['username']
+			);
+
+		$this->load->view('header');
+		$this->load->view('navbar', $user);
 		$this->load->view('create_question');
 	}
 
