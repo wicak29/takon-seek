@@ -112,7 +112,7 @@ class Home extends CI_Controller
 		$result = $this->user_model->store($data['dest'][0]['id'], $userdata[0]['id']);
 
 		$this->load->view('header');
-		$this->load->view('navbar', $user);
+		// $this->load->view('navbar', $user);
 		$this->load->view('videochat', $data);
 	}
 
