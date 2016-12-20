@@ -33,7 +33,7 @@
                                 <div class="single-blog single-column">
                                     <div class="post-content overflow">
                                         <h2 class="post-title bold"><a href="<?php echo base_url('home/question_detail/'.$q['id']); ?>"><?php echo $q['title']; ?></a></h2>
-                                        <h3 class="post-author"><a href="#">Posted by <?php echo "wicak" ?></a></h3>
+                                        <h3 class="post-author"><a href="#">Posted by <?php echo $q['username'] ?></a></h3>
                                         <div class="post-bottom overflow">
                                             <ul class="nav navbar-nav post-nav">
                                                 <li><a href="#"><i class="fa fa-tag"></i><?php echo $kategori[$q['category']]; ?></a></li>

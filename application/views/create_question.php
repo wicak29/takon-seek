@@ -163,7 +163,7 @@
                         </div>
                         <div class="form-group">
                             <label>Question Text *</label>
-                            <textarea id="elm1" name="q_text" rows="15" cols="80" style="width: 80%" required="required"></textarea>
+                            <textarea id="elm1" name="q_text" rows="15" cols="80" style="width: 80%" required="required">Your question here</textarea>
                         </div>
                         <div class="form-group">
                             <label>Category *</label>
@@ -174,7 +174,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Upload Video</label>
+                            <label>Upload Video (Max: 30Mb or 2 minutes)</label>
                             <input id="video_upload" type="file" name="video_upload" class="form-control">
                         </div>
                         <hr>

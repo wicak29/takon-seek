@@ -66,9 +66,9 @@
                                                         foreach ($answer_list as $key => $answer) 
                                                         { ?>
                                                         <div class="post-comment">
-                                                            <a class="pull-left" href="#">
+                                                            <div class="pull-left">
                                                                 <img class="media-object" src="<?php echo base_url('assets/multicolor'); ?>/images/blogdetails/5.png" alt="" style="border-left: 0px;">
-                                                            </a>
+                                                            </div>
                                                             <div class="media-body" style="padding-bottom: 30px;">
                                                                 <span><i class="fa fa-user"></i>Posted by <a href="#"><?php echo $answer['username'] ?></a></span> <span class="label label-success">Online</span>
                                                                 <div class="row">
@@ -81,7 +81,23 @@
                                                                 </ul>
                                                                 <br>
                                                                 <br>
-                                                                <a href="<?php echo base_url('home/chat/'.$answer['id']); ?>"><button class="btn btn-default btn-xs">Ask for Video Chat</button></a>
+                                                                <div class="row" style="margin-left: 0; ">
+                                                                    <?php 
+                                                                    $status = 0;
+                                                                    if ($answer['answer_status']==1)
+                                                                    { ?>
+                                                                        <button class="btn btn-success btn-xs" title="accepted"><i class="fa fa-check" aria-hidden="true"></i>Accepted</button>
+                                                                    <?php 
+                                                                    $status = 1;
+                                                                    }
+                                                                    else
+                                                                    { ?>
+                                                                        <a href="<?php echo base_url('home/mark_answer/'.$question_det['id'].'/'.$answer['answer_id']); ?>"><button class="btn btn-default btn-xs" title=" mark this answer as accepted">Mark Answer</button></a>
+                                                                    <?php 
+                                                                    }
+                                                                    ?>
+                                                                    <a href="<?php echo base_url('home/chat/'.$answer['id']); ?>"><button class="btn btn-default btn-xs">Ask for Video Chat</button></a>
+                                                                </div>
                                                             </div>
                                                         </div>  
                                                         <?php }

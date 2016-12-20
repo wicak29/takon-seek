@@ -37,13 +37,21 @@ class Question extends CI_Model
 		return $query;
 	}
 
+	public function updateAnswerStatus($id)
+	{
+		$data = array('answer_status'=>1);
+		$this->db->where('answer_id', $id);
+		$result = $this->db->update('answer', $data);
+		return $result;
+	}
+
 	public function addAnswer($answer)
 	{
 		$data = array(
 			'answer_text' => $answer['answer'],
-			'answer_status' => 1,
+			'answer_status' => 0,
 			'answer_date_posted' => date('Y-m-d h:i:sa'),
-			'user_id' => 1,
+			'user_id' => $answer['user_id'],
 			'question_id' => $answer['qid']
 			);
 		$query = $this->db->insert('answer', $data);
@@ -52,7 +60,7 @@ class Question extends CI_Model
 
 	public function getAllQuestion()
 	{
-		$query = $this->db->get('question');
+		$query = $this->db->query('SELECT * FROM question, user WHERE question.user_id=user.id ORDER BY question.id DESC');
 		return $query->result_array();
 	}
 
