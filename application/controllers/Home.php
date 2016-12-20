@@ -51,6 +51,8 @@ class Home extends CI_Controller
 			);
 		$data['id_kategori'] = $id;
 		$data['question_list'] = $this->question->getQuestionByCat($id);
+		// print_r($data['question_list']);
+		// return;
 
 		foreach ($data['question_list'] as $key => $value) {
 			$data['question_list'][$key]['total_answer'] = $this->question->countAnswer($value['id']);
@@ -101,12 +103,13 @@ class Home extends CI_Controller
 				'id' => $userdata[0]['id'],
 				'username' => $userdata[0]['username']
 			);
-		$data['user'] = $this->chat->getUser($id);
-		/*print_r($data);
-		return;*/
+		$data['user'] = $user;
+		$data['dest'] = $this->chat->getUser($id);
+		// print_r($data);
+		// return;
 		$this->load->view('header');
 		$this->load->view('navbar', $user);
-		$this->load->view('chat', $data);
+		$this->load->view('videochat', $data);
 	}
 
 	public function create_question()
