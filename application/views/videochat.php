@@ -6,8 +6,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Socket.io | WebRTC One-to-One Video Chat</title>
-
         <script>
             if(!location.hash.replace('#', '').length) {
                 // var id = (Math.random() * 100).toString().replace('.', '');
@@ -41,7 +39,7 @@
                 border-radius: 1px;
                 font-size: 2em;
                 margin: .2em;
-                width: 30%;
+                width: 60%;
             }
 
             .setup {
@@ -49,9 +47,9 @@
                 border-top-left-radius: 0;
                 font-size: 102%;
                 height: 47px;
-                margin-left: -9px;
-                margin-top: 8px;
-                position: absolute;
+                margin-left: 0px;
+                margin-top: 0px;
+                float:right;
             }
 
             p { padding: 1em; }
@@ -78,8 +76,8 @@
     <body>
         <article>
             <header style="text-align: center;">
-                <h1>
-                    Socket.io | WebRTC One-to-One Video Chat
+                <h1 style="border-bottom: 0;">
+                   TAKON SEEK| One-to-One Video Chat
                 </h1>
             </header>
 
@@ -90,7 +88,7 @@
                         <a href="<?php echo base_url('home/chat/'.$user['id']);?>" target="_blank" title="Setup Private Room!"><code><strong>Call <?php echo $dest[0]['username'];?></strong></code></a>
                     </span>
                     <input type="text" id="your-name" value="<?php echo $user['username']; ?>">
-                    <button id="start-broadcasting" class="setup">Start Transmitting Yourself!</button>
+                    <button id="start-broadcasting" class="setup">Start Chatting!</button>
                 </section>
 
                 <!-- list of all available conferencing rooms -->
