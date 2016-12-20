@@ -9,6 +9,7 @@ class Home extends CI_Controller
 	    $this->load->helper(array('url','html','form'));
 	    $this->load->model('question');
 	    $this->load->model('chat');
+	    $this->load->model('user_model');
 	    if(!$this->session->has_userdata('logged'))
 		{
 			redirect('auth/login');
@@ -107,6 +108,9 @@ class Home extends CI_Controller
 		$data['dest'] = $this->chat->getUser($id);
 		// print_r($data);
 		// return;
+		// print_r($data['dest'][0]) ;
+		$result = $this->user_model->store($data['dest'][0]['id'], $userdata[0]['id']);
+
 		$this->load->view('header');
 		$this->load->view('navbar', $user);
 		$this->load->view('videochat', $data);

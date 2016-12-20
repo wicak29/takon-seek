@@ -45,4 +45,12 @@ class User_model extends CI_Model
 	{
 		$this->load->view('welcome_message');
 	}
+
+	public function store($dest, $src) {
+		$value = $dest.'#'.$src;
+		$this->db->set('temp_id', $value);
+		$this->db->where('id', $src);
+		$query = $this->db->update('user');
+		return $query;
+	}
 }
