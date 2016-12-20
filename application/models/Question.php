@@ -60,7 +60,7 @@ class Question extends CI_Model
 
 	public function getAllQuestion()
 	{
-		$query = $this->db->query('SELECT * FROM question, user WHERE question.user_id=user.id ORDER BY question.id DESC');
+		$query = $this->db->query('SELECT question.*, user.username FROM question, user WHERE question.user_id=user.id ORDER BY question.id DESC');
 		return $query->result_array();
 	}
 
@@ -90,7 +90,7 @@ class Question extends CI_Model
 
 	public function getQuestionByCat($id)
 	{
-		$query = $this->db->query('SELECT * FROM question, user WHERE question.user_id=user.id AND question.category='.$id);
+		$query = $this->db->query('SELECT question.*, user.username FROM question, user WHERE question.user_id=user.id AND question.category='.$id);
 		return $query->result_array();
 	}
 }

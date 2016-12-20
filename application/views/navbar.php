@@ -11,6 +11,10 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                <a href=""><span><i class="fa fa-phone" aria-hidden="true"></i>
+</span> New Call <span class="label label-danger">!</span></a>
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-user"></span> 
