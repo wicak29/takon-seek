@@ -49,8 +49,15 @@ class User_model extends CI_Model
 	public function store($dest, $src) {
 		$value = $dest.'#'.$src;
 		$this->db->set('temp_id', $value);
-		$this->db->where('id', $src);
+		$this->db->where('id', $dest);
 		$query = $this->db->update('user');
 		return $query;
+	}
+
+	public function get_call($id) {
+		$query = $this->db->select('*')
+			->from('user')
+			->where('id='.$id)->get();
+		return $query->result_array();
 	}
 }

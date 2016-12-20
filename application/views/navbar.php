@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                <a href=""><span><i class="fa fa-phone" aria-hidden="true"></i>
+                <a href="<?php echo base_url('home/chat/'.$call[0]['temp_id']);?>"><span><i class="fa fa-phone" aria-hidden="true"></i>
 </span> New Call <span class="label label-danger">!</span></a>
                 </li>
                 <li class="dropdown">
