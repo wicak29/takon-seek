@@ -10,7 +10,6 @@
             if(!location.hash.replace('#', '').length) {
                 // var id = (Math.random() * 100).toString().replace('.', '');
                 location.href = location.href.split('#')[0] + '#' + '<?php echo $user['id'];?>';
-                
                 location.reload();
             }
         </script>
