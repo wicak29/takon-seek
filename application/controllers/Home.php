@@ -103,12 +103,13 @@ class Home extends CI_Controller
 				'id' => $userdata[0]['id'],
 				'username' => $userdata[0]['username']
 			);
-		$data['user'] = $this->chat->getUser($id);
-		/*print_r($data);
-		return;*/
+		$data['user'] = $user;
+		$data['dest'] = $this->chat->getUser($id);
+		// print_r($data);
+		// return;
 		$this->load->view('header');
 		$this->load->view('navbar', $user);
-		$this->load->view('chat', $data);
+		$this->load->view('videochat', $data);
 	}
 
 	public function create_question()
