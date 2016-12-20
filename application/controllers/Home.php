@@ -37,7 +37,9 @@ class Home extends CI_Controller
 		}
 	    // print_r($data);
 	    // return;
-
+	    $newCall = $this->user_model->get_call($userdata[0]['id']);
+	    $data['call'] = $newCall;
+	    // print_r($data);
 	    $this->load->view('header');
 		$this->load->view('navbar', $data);
     	$this->load->view('home', $data);
@@ -61,6 +63,8 @@ class Home extends CI_Controller
 
 		// print_r($data['question_list']);
 		// return;
+		$newCall = $this->user_model->get_call($userdata[0]['id']);
+	    $user['call'] = $newCall;
 		$this->load->view('header');
 		$this->load->view('navbar', $user);
 		$this->load->view('question_list', $data);
@@ -81,6 +85,8 @@ class Home extends CI_Controller
 		}
 		// print_r($data);
 		// return;
+		$newCall = $this->user_model->get_call($userdata[0]['id']);
+	    $user['call'] = $newCall;
 		$this->load->view('header');
 		$this->load->view('navbar', $user);
 		$this->load->view('question_detail', $data);
@@ -110,7 +116,8 @@ class Home extends CI_Controller
 		// return;
 		// print_r($data['dest'][0]) ;
 		$result = $this->user_model->store($data['dest'][0]['id'], $userdata[0]['id']);
-
+		$newCall = $this->user_model->get_call($userdata[0]['id']);
+	    $user['call'] = $newCall;
 		$this->load->view('header');
 		// $this->load->view('navbar', $user);
 		$this->load->view('videochat', $data);
@@ -123,7 +130,8 @@ class Home extends CI_Controller
 				'id' => $userdata[0]['id'],
 				'username' => $userdata[0]['username']
 			);
-
+		$newCall = $this->user_model->get_call($userdata[0]['id']);
+	    $user['call'] = $newCall;
 		$this->load->view('header');
 		$this->load->view('navbar', $user);
 		$this->load->view('create_question');
