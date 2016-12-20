@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => '10.151.36.61',
+	'username' => 'tkserver',
+	'password' => 'tkserver',
 	'database' => 'takonseek',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
