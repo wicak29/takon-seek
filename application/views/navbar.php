@@ -12,8 +12,10 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
+                <?php if($call[0]['temp_id']!=0){ ?>
                 <a href="<?php echo base_url('home/chat/'.$call[0]['temp_id']);?>"><span><i class="fa fa-phone" aria-hidden="true"></i>
 </span> New Call <span class="label label-danger">!</span></a>
+<?php } ?>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">

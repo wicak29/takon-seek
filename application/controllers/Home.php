@@ -123,6 +123,12 @@ class Home extends CI_Controller
 		$this->load->view('videochat', $data);
 	}
 
+	public function reset($id)
+	{
+		$result = $this->user_model->reset($id);
+		redirect('home');
+	}
+
 	public function create_question()
 	{
 		$userdata = $this->session->userdata('logged');

@@ -96,7 +96,7 @@
                 <!-- local/remote videos container -->
                 <div id="videos-container"></div>
                 <div class="row">
-                    <a href="" class="btn btn-danger" style="float: right;margin: 0 20 20 0;">Disconect</a>
+                    <a href="<?php echo base_url('home/reset/'.$dest[0]['id']);?>" class="btn btn-danger" style="float: right;margin: 0 20 20 0;">Disconect</a>
                 </div>
             </section>
 

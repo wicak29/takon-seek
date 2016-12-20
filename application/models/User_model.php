@@ -60,4 +60,12 @@ class User_model extends CI_Model
 			->where('id='.$id)->get();
 		return $query->result_array();
 	}
+
+	public function reset($id)
+	{
+		$this->db->set('temp_id', 0);
+		$this->db->where('id', $id);
+		$query = $this->db->update('user');
+		return $query;
+	}
 }
